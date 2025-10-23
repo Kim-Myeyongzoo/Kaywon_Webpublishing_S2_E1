@@ -1,0 +1,97 @@
+/* 기본 초기화 및 설정 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 전체 화면 높이 사용을 위해 필수 */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* 1. 메인 컨테이너: Flexbox를 사용하여 가로 분할 */
+.container {
+    display: flex;
+    height: 100vh; /* 뷰포트 전체 높이를 차지하도록 설정 */
+    border: 1px solid black; /* 전체 테두리 (이미지 참고) */
+    /* 이전 코드에 있던 border: 1px solid black;는 제거하여 깔끔한 레이아웃을 유지합니다. */
+}
+
+/* 2. 고정 사이드바 */
+.sidebar {
+    width: 280px; /* 사이드바 고정 너비 */
+    background-color: #fff;
+    flex-shrink: 0; 
+    box-sizing: border-box;
+    /* 스크린샷처럼 좌우에 구분선을 추가할 수 있습니다 */
+    border-right: 1px solid #ddd; 
+}
+
+/* --- 사용자 프로필 스타일 --- */
+.user-profile {
+    padding: 30px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* border-bottom: 1px solid black; (스크린샷에 따라 얇은 회색으로 변경) */
+    border-bottom: 1px solid #eee;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc; 
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+.name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.nickname, .date {
+    font-size: 0.8em;
+    color: #666;
+    margin: 3px 0 0 0;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95em;
+    /* border-bottom: 1px solid black; (스크린샷에 따라 얇은 회색으로 변경) */
+    border-bottom: 1px solid #eee;
+}
+
+/* 활성화된 메뉴 항목 (01 USER GUIDE) */
+.menu-item.active {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* 3. 스크롤 가능한 메인 콘텐츠 영역 */
+.main-content {
+    /* 💥 position: relative 유지 - 내부 겹치기 필요 시 대비 */
+    position: relative; 
+    flex-grow: 1; 
+    padding: 50px 80px; 
+    /* 💥 텍스트 정렬은 content-section이 담당하도록 제거 */
+    /* text-align: center; */ 
+    overflow-y: auto; 
+    box-sizing: border-box;
+    
+    /* 💥 main-content 내부에 이미지/헤더가 가운데 오도록 임시 Flexbox 적용 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.content-section {
+    text-align: center; 
+    width: 70%;
+    max-width: 700px;   
+}
