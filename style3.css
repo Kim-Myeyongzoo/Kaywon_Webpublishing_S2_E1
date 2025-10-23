@@ -78,7 +78,9 @@ body, html {
     /* 💥 position: relative 유지 - 내부 겹치기 필요 시 대비 */
     position: relative; 
     flex-grow: 1; 
-    padding: 50px 80px;
+    padding: 50px 80px; 
+    /* 💥 텍스트 정렬은 content-section이 담당하도록 제거 */
+    /* text-align: center; */ 
     overflow-y: auto; 
     box-sizing: border-box;
     
